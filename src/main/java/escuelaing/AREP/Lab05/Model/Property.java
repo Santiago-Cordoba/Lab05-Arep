@@ -1,9 +1,11 @@
 package escuelaing.AREP.Lab05.Model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+@Entity
 public class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +21,10 @@ public class Property {
         this.price = price;
         this.size = size;
         this.description = description;
+    }
+
+    public Property() {
+
     }
 
     public String getAddress() {
@@ -51,5 +57,13 @@ public class Property {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
